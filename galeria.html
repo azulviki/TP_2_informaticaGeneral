@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Casi Primavera — Home</title>
+  <title>Casi Primavera — Galería</title>
 
   <!-- Tipografías -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -14,16 +14,16 @@
       theme: {
         extend: {
           colors: {
-            fondo: '#fafafa',       // fondo muy claro
-            primario: '#1a1a1a',    // negro suave
-            secundario: '#4b5563',  // gris neutro
-            acento: '#2563eb',      // azul minimalista
-            borde: '#e5e5e5',       // líneas sutiles
-            claro: '#ffffff'        // blanco puro
+            fondo: '#fafafa',
+            primario: '#1a1a1a',
+            secundario: '#4b5563',
+            acento: '#2563eb',
+            borde: '#e5e5e5',
+            claro: '#ffffff'
           },
           fontFamily: {
             titulo: ['DM Serif Display', 'serif'],
-            cuerpo: ['Inter', 'sans-serif'],
+            cuerpo: ['Inter', 'sans-serif']
           },
           spacing: {
             'section': '6rem'
@@ -36,7 +36,7 @@
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- VueJS CDN (para futuras secciones) -->
+  <!-- VueJS CDN -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 
   <!-- CSS -->
@@ -52,7 +52,7 @@
 
       <nav id="menu" class="hidden md:flex gap-8 text-secundario">
         <a href="index.html" class="hover:text-acento">Home</a>
-        <a href="galeria.html" class="hover:text-acento">Galería</a>
+        <a href="galeria.html" class="hover:text-acento font-medium text-acento">Galería</a>
         <a href="integrantes.html" class="hover:text-acento">Integrantes</a>
         <a href="cine.html" class="hover:text-acento">Cine</a>
         <a href="locaciones.html" class="hover:text-acento">Locaciones</a>
@@ -76,37 +76,26 @@
   </header>
 
   <!-- MAIN -->
-  <main class="flex-grow container mx-auto py-section px-6 space-y-20">
+  <main id="galeria" class="flex-grow container mx-auto py-section px-6" v-cloak>
+    <h2 class="text-4xl font-titulo mb-8 text-center">Galería de ediciones</h2>
 
-    <!-- Sección de bienvenida -->
-    <section class="text-center">
-      <h2 class="text-4xl font-titulo mb-4">Bienvenidos a Casi Primavera</h2>
-      <p class="max-w-3xl mx-auto text-secundario leading-relaxed">
-        Un ciclo de cortometrajes independientes que celebra la experimentación, la poesía visual 
-        y las miradas diversas del cine argentino contemporáneo.
-      </p>
-    </section>
-
-    <!-- Subsección 1 -->
-    <section class="grid md:grid-cols-2 gap-12">
-      <div class="bg-claro p-8 rounded-2xl shadow-sm border border-borde hover:shadow-md transition">
-        <h3 class="text-2xl font-titulo text-primario mb-3">Ediciones anteriores</h3>
-        <p class="text-secundario mb-4">
-          Una selección de fotos de los útimos eventos.
-        </p>
-        <a href="galeria.html" class="text-acento font-medium hover:underline">Ver galería</a>
+    <!-- GRID de imágenes -->
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div v-for="img in imagenes" :key="img.src" @click="abrirImagen(img)" class="cursor-pointer">
+        <img :src="img.src" :alt="img.titulo" class="rounded-2xl border border-borde shadow-sm hover:shadow-md transition">
+        <h3 class="text-center mt-3 font-medium text-secundario">{{ img.titulo }}</h3>
       </div>
+    </div>
 
-      <!-- Subsección 2 -->
-      <div class="bg-claro p-8 rounded-2xl shadow-sm border border-borde hover:shadow-md transition">
-        <h3 class="text-2xl font-titulo text-primario mb-3">Próxima Convocatoria</h3>
-        <p class="text-secundario mb-4">
-          Si sos realizador o realizadora y querés ser parte de Casi Primavera, conocé las bases 
-          para la próxima convocatoria y enviá tu cortometraje.
-        </p>
-        <a href="contacto.html" class="text-acento font-medium hover:underline">Participar</a>
+    <!-- MODAL -->
+    <div v-if="imagenActiva" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+      <div class="bg-claro p-6 rounded-2xl relative max-w-2xl w-full mx-4">
+        <button @click="cerrarImagen" class="absolute top-3 right-3 text-secundario text-xl">✕</button>
+        <img :src="imagenActiva.src" :alt="imagenActiva.titulo" class="rounded-lg mb-4 mx-auto max-h-[70vh]">
+        <h3 class="text-xl font-titulo mb-2">{{ imagenActiva.titulo }}</h3>
+        <p class="text-secundario">{{ imagenActiva.desc }}</p>
       </div>
-    </section>
+    </div>
   </main>
 
   <!-- FOOTER -->
@@ -118,5 +107,8 @@
 
   <!-- JS -->
   <script src="js/menu.js"></script>
+  <script src="js/galeria.js"></script>
 </body>
 </html>
+
+
