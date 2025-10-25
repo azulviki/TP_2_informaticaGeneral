@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Casi Primavera — Home</title>
+  <title>Casi Primavera — Contacto</title>
 
   <!-- Tipografías -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -14,16 +14,16 @@
       theme: {
         extend: {
           colors: {
-            fondo: '#fafafa',       // fondo muy claro
-            primario: '#1a1a1a',    // negro suave
-            secundario: '#4b5563',  // gris neutro
-            acento: '#2563eb',      // azul minimalista
-            borde: '#e5e5e5',       // líneas sutiles
-            claro: '#ffffff'        // blanco puro
+            fondo: '#fafafa',
+            primario: '#1a1a1a',
+            secundario: '#4b5563',
+            acento: '#2563eb',
+            borde: '#e5e5e5',
+            claro: '#ffffff'
           },
           fontFamily: {
             titulo: ['DM Serif Display', 'serif'],
-            cuerpo: ['Inter', 'sans-serif'],
+            cuerpo: ['Inter', 'sans-serif']
           },
           spacing: {
             'section': '6rem'
@@ -36,7 +36,7 @@
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- VueJS CDN (para futuras secciones) -->
+  <!-- VueJS CDN -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 
   <!-- CSS -->
@@ -56,7 +56,7 @@
         <a href="integrantes.html" class="hover:text-acento">Integrantes</a>
         <a href="cine.html" class="hover:text-acento">Cine</a>
         <a href="locaciones.html" class="hover:text-acento">Locaciones</a>
-        <a href="contacto.html" class="hover:text-acento">Contacto</a>
+        <a href="contacto.html" class="hover:text-acento font-medium text-acento">Contacto</a>
         <a href="acerca.html" class="hover:text-acento">Acerca de</a>
       </nav>
 
@@ -76,37 +76,39 @@
   </header>
 
   <!-- MAIN -->
-  <main class="flex-grow container mx-auto py-section px-6 space-y-20">
+  <main id="contacto" class="flex-grow container mx-auto py-section px-6" v-cloak>
+    <h2 class="text-4xl font-titulo mb-8 text-center">Contacto</h2>
+    <p class="text-center text-secundario max-w-2xl mx-auto mb-12">
+      Si querés participar del ciclo, enviar tu cortometraje o simplemente ponerte en contacto con nosotros, completá el siguiente formulario.
+    </p>
 
-    <!-- Sección de bienvenida -->
-    <section class="text-center">
-      <h2 class="text-4xl font-titulo mb-4">Bienvenidos a Casi Primavera</h2>
-      <p class="max-w-3xl mx-auto text-secundario leading-relaxed">
-        Un ciclo de cortometrajes independientes que celebra la experimentación, la poesía visual 
-        y las miradas diversas del cine argentino contemporáneo.
-      </p>
-    </section>
+    <!-- FORMULARIO -->
+    <form @submit.prevent="enviarFormulario" class="max-w-xl mx-auto bg-claro p-8 rounded-2xl shadow-sm border border-borde space-y-6">
+  <div>
+    <label for="nombre" class="block text-sm font-medium text-primario mb-2">Nombre</label>
+    <input v-model="nombre" id="nombre" type="text" required class="w-full border border-borde rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-acento">
+  </div>
 
-    <!-- Subsección 1 -->
-    <section class="grid md:grid-cols-2 gap-12">
-      <div class="bg-claro p-8 rounded-2xl shadow-sm border border-borde hover:shadow-md transition">
-        <h3 class="text-2xl font-titulo text-primario mb-3">Ediciones anteriores</h3>
-        <p class="text-secundario mb-4">
-          Una selección de fotos de los útimos eventos.
-        </p>
-        <a href="galeria.html" class="text-acento font-medium hover:underline">Ver galería</a>
-      </div>
+  <div>
+    <label for="email" class="block text-sm font-medium text-primario mb-2">Correo electrónico</label>
+    <input v-model="email" id="email" type="email" required class="w-full border border-borde rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-acento">
+  </div>
 
-      <!-- Subsección 2 -->
-      <div class="bg-claro p-8 rounded-2xl shadow-sm border border-borde hover:shadow-md transition">
-        <h3 class="text-2xl font-titulo text-primario mb-3">Próxima Convocatoria</h3>
-        <p class="text-secundario mb-4">
-          Si sos realizador o realizadora y querés ser parte de Casi Primavera, conocé las bases 
-          para la próxima convocatoria y enviá tu cortometraje.
-        </p>
-        <a href="contacto.html" class="text-acento font-medium hover:underline">Participar</a>
-      </div>
-    </section>
+  <div>
+    <label for="mensaje" class="block text-sm font-medium text-primario mb-2">Mensaje</label>
+    <textarea v-model="mensaje" id="mensaje" rows="5" required class="w-full border border-borde rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-acento"></textarea>
+  </div>
+
+  <!-- BOTÓN DE ENVIAR -->
+  <div class="text-center">
+    <button type="submit" class="bg-acento text-claro px-6 py-2 rounded-lg hover:bg-blue-700 transition font-medium">
+      Enviar
+    </button>
+  </div>
+
+  <p v-if="exito" class="text-green-600 text-center mt-4">¡Mensaje enviado con éxito!</p>
+</form>
+
   </main>
 
   <!-- FOOTER -->
@@ -118,5 +120,6 @@
 
   <!-- JS -->
   <script src="js/menu.js"></script>
+  <script src="js/contacto.js"></script>
 </body>
 </html>

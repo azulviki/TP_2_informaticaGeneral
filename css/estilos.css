@@ -1,0 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
+
+[v-cloak] { display: none; }
+
+a {
+  transition: color 0.3s ease;
+}
+
+.shadow-suave {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
