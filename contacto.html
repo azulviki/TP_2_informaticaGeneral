@@ -9,29 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
 
   <!-- Configuración Tailwind personalizada -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            fondo: '#fafafa',
-            primario: '#1a1a1a',
-            secundario: '#4b5563',
-            acento: '#2563eb',
-            borde: '#e5e5e5',
-            claro: '#ffffff'
-          },
-          fontFamily: {
-            titulo: ['DM Serif Display', 'serif'],
-            cuerpo: ['Inter', 'sans-serif']
-          },
-          spacing: {
-            'section': '6rem'
-          }
-        }
-      }
-    }
-  </script>
+  <link href="./output.css" rel="stylesheet">
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -43,21 +21,21 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
-<body class="bg-fondo text-primario flex flex-col min-h-screen font-cuerpo">
+<body class="bg-black text-white flex flex-col min-h-screen font-cuerpo">
 
   <!-- HEADER -->
   <header class="bg-claro border-b border-borde">
     <div class="container mx-auto flex justify-between items-center p-4">
       <h1 class="text-2xl font-titulo text-primario">Casi Primavera</h1>
 
-      <nav id="menu" class="hidden md:flex gap-8 text-secundario">
-        <a href="index.html" class="hover:text-acento">Home</a>
-        <a href="galeria.html" class="hover:text-acento">Galería</a>
-        <a href="integrantes.html" class="hover:text-acento">Integrantes</a>
-        <a href="cine.html" class="hover:text-acento">Cine</a>
-        <a href="locaciones.html" class="hover:text-acento">Locaciones</a>
-        <a href="contacto.html" class="hover:text-acento font-medium text-acento">Contacto</a>
-        <a href="acerca.html" class="hover:text-acento">Acerca de</a>
+      <nav id="menu" class="hidden md:flex gap-8">
+        <a href="index.html" class="hover:text-[#ccc5b9]">Home</a>
+        <a href="galeria.html" class="hover:text-[#ccc5b9]">Galería</a>
+        <a href="integrantes.html" class="hover:text-[#ccc5b9]">Integrantes</a>
+        <a href="cine.html" class="hover:text-[#ccc5b9]">Cine</a>
+        <a href="locaciones.html" class="hover:text-[#ccc5b9]">Locaciones</a>
+        <a href="contacto.html" class="hover:text-[#ccc5b9]">Contacto</a>
+        <a href="acerca.html" class="hover:text-[#ccc5b9]">Acerca de</a>
       </nav>
 
       <button id="menu-btn" class="md:hidden text-primario focus:outline-none text-2xl">☰</button>
@@ -65,13 +43,13 @@
 
     <!-- Menú mobile -->
     <nav id="mobile-menu" class="hidden flex-col bg-claro border-t border-borde md:hidden text-center">
-      <a href="index.html" class="py-3 border-b border-borde hover:text-acento">Home</a>
-      <a href="galeria.html" class="py-3 border-b border-borde hover:text-acento">Galería</a>
-      <a href="integrantes.html" class="py-3 border-b border-borde hover:text-acento">Integrantes</a>
-      <a href="cine.html" class="py-3 border-b border-borde hover:text-acento">Cine</a>
-      <a href="locaciones.html" class="py-3 border-b border-borde hover:text-acento">Locaciones</a>
-      <a href="contacto.html" class="py-3 border-b border-borde hover:text-acento">Contacto</a>
-      <a href="acerca.html" class="py-3 hover:text-acento">Acerca de</a>
+      <a href="index.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Home</a>
+      <a href="galeria.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Galería</a>
+      <a href="integrantes.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Integrantes</a>
+      <a href="cine.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Cine</a>
+      <a href="locaciones.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Locaciones</a>
+      <a href="contacto.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Contacto</a>
+      <a href="acerca.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Acerca de</a>
     </nav>
   </header>
 
@@ -101,7 +79,7 @@
 
   <!-- BOTÓN DE ENVIAR -->
   <div class="text-center">
-    <button type="submit" class="bg-acento text-claro px-6 py-2 rounded-lg hover:bg-blue-700 transition font-medium">
+    <button type="submit" class="bg-acento text-claro px-6 py-2 rounded-lg hover:bg-white hover:text-black transition font-medium">
       Enviar
     </button>
   </div>

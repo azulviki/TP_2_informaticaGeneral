@@ -7,57 +7,35 @@
 
   <!-- Tipografías -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
-
-  <!-- Configuración Tailwind personalizada -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            fondo: '#fafafa',
-            primario: '#1a1a1a',
-            secundario: '#4b5563',
-            acento: '#2563eb',
-            borde: '#e5e5e5',
-            claro: '#ffffff'
-          },
-          fontFamily: {
-            titulo: ['DM Serif Display', 'serif'],
-            cuerpo: ['Inter', 'sans-serif']
-          },
-          spacing: {
-            'section': '6rem'
-          }
-        }
-      }
-    }
-  </script>
+  <link href="./output.css" rel="stylesheet">
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- VueJS CDN -->
-  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+
+  <!-- VueJS CDN 
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>-->
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
-<body class="bg-fondo text-primario flex flex-col min-h-screen font-cuerpo">
+<body class="bg-black text-white flex flex-col min-h-screen font-cuerpo">
+  
 
   <!-- HEADER -->
   <header class="bg-claro border-b border-borde">
     <div class="container mx-auto flex justify-between items-center p-4">
       <h1 class="text-2xl font-titulo text-primario">Casi Primavera</h1>
 
-      <nav id="menu" class="hidden md:flex gap-8 text-secundario">
-        <a href="index.html" class="hover:text-acento">Home</a>
-        <a href="galeria.html" class="hover:text-acento font-medium text-acento">Galería</a>
-        <a href="integrantes.html" class="hover:text-acento">Integrantes</a>
-        <a href="cine.html" class="hover:text-acento">Cine</a>
-        <a href="locaciones.html" class="hover:text-acento">Locaciones</a>
-        <a href="contacto.html" class="hover:text-acento">Contacto</a>
-        <a href="acerca.html" class="hover:text-acento">Acerca de</a>
+      <nav id="menu" class="hidden md:flex gap-8">
+        <a href="index.html" class="hover:text-[#ccc5b9]">Home</a>
+        <a href="galeria.html" class="hover:text-[#ccc5b9]">Galería</a>
+        <a href="integrantes.html" class="hover:text-[#ccc5b9]">Integrantes</a>
+        <a href="cine.html" class="hover:text-[#ccc5b9]">Cine</a>
+        <a href="locaciones.html" class="hover:text-[#ccc5b9]">Locaciones</a>
+        <a href="contacto.html" class="hover:text-[#ccc5b9]">Contacto</a>
+        <a href="acerca.html" class="hover:text-[#ccc5b9]">Acerca de</a>
       </nav>
 
       <button id="menu-btn" class="md:hidden text-primario focus:outline-none text-2xl">☰</button>
@@ -65,38 +43,28 @@
 
     <!-- Menú mobile -->
     <nav id="mobile-menu" class="hidden flex-col bg-claro border-t border-borde md:hidden text-center">
-      <a href="index.html" class="py-4 text-lg font-medium hover:oklch(44.6% 0.03 256.802)text-acento block">Home</a>
-      <a href="galeria.html" class="py-4 text-lg font-medium hover:oklch(44.6% 0.03 256.802)text-acento block">Galería</a>
-      <a href="integrantes.html" class="py-4 text-lg font-medium hover:oklch(44.6% 0.03 256.802)text-acento block">Integrantes</a>
-      <a href="cine.html" class="py-4 text-lg font-medium hover:oklch(44.6% 0.03 256.802)text-acento block">Cine</a>
-      <a href="locaciones.html" class="py-4 text-lg font-medium hover:oklch(44.6% 0.03 256.802)text-acento block">Locaciones</a>
-      <a href="contacto.html" class="py-4 text-lg font-medium hover:oklch(44.6% 0.03 256.802)text-acento block">Contacto</a>
-      <a href="acerca.html" class="py-4 text-lg font-medium hover:text-acento block">Acerca de</a>
+      <a href="index.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Home</a>
+      <a href="galeria.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Galería</a>
+      <a href="integrantes.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Integrantes</a>
+      <a href="cine.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Cine</a>
+      <a href="locaciones.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Locaciones</a>
+      <a href="contacto.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Contacto</a>
+      <a href="acerca.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Acerca de</a>
     </nav>
   </header>
 
   <!-- MAIN -->
-  <main id="galeria" class="flex-grow container mx-auto py-section px-6" v-cloak>
+  <main class="flex-grow container mx-auto py-section px-6" v-cloak>
     <h2 class="text-4xl font-titulo mb-8 text-center">Galería de ediciones</h2>
+    <div id="app" class="max-w-4xl mx-auto"></div>
+    <img :src="f"  class="w-full h-full object-cover rounded-xl" loading="lazy"/>
+    
+
+ 
 
     <!-- GRID de imágenes -->
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <div v-for="img in imagenes" :key="img.src" @click="abrirImagen(img)" class="cursor-pointer">
-        <img :src="img.src" :alt="img.titulo" class="rounded-2xl border border-borde shadow-sm hover:shadow-md transition">
-        <h3 class="text-center mt-3 font-medium text-secundario">{{ img.titulo }}</h3>
-      </div>
-    </div>
+    
 
-    <!-- MODAL -->
-    <div v-if="imagenActiva" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-      <div class="bg-claro p-6 rounded-2xl relative max-w-2xl w-full mx-4">
-        <button @click="cerrarImagen" class="absolute top-3 right-3 text-secundario text-xl">✕</button>
-        <img :src="imagenActiva.src" :alt="imagenActiva.titulo" class="rounded-lg mb-4 mx-auto max-h-[70vh]">
-        <h3 class="text-xl font-titulo mb-2">{{ imagenActiva.titulo }}</h3>
-        <p class="text-secundario">{{ imagenActiva.desc }}</p>
-      </div>
-    </div>
-  </main>
 
   <!-- FOOTER -->
   <footer class="bg-claro border-t border-borde py-6 mt-16">
@@ -106,8 +74,11 @@
   </footer>
 
   <!-- JS -->
+   
+
   <script src="js/menu.js"></script>
-  <script src="js/galeria.js"></script>
+  <script type="module" src="js/galeria.js"></script>
+
 </body>
 </html>
 
