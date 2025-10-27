@@ -13,10 +13,19 @@ export default {
       spacing: {
         section: '6rem',         // tu clase py-section
       },
+
       fontFamily: {
         titulo: ['"League Gothic"', 'sans-serif'],
         cuerpo: ['Montserrat', 'sans-serif'],
       },
+
+      fontSize: {
+        titulo: ['4rem', { lineHeight: '1.2' }],
+        subtitulo: ['2rem', { lineHeight: '1.3' }],
+        cuerpo: ['3rem', { lineHeight: '1.6' }],
+      },
+
+
     },
   },
   plugins: [],

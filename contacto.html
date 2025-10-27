@@ -7,13 +7,14 @@
 
   <!-- Tipografías -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
-
-  <!-- Configuración Tailwind personalizada -->
+  <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link href="./output.css" rel="stylesheet">
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind local compilado -->
+  <link href="./css/output.css" rel="stylesheet">
 
+  
   <!-- VueJS CDN -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 
@@ -24,9 +25,11 @@
 <body class="bg-black text-white flex flex-col min-h-screen font-cuerpo">
 
   <!-- HEADER -->
-  <header class="bg-claro border-b border-borde">
+  <header class="bg-claro border-b border-borde mb-4">
     <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-titulo text-primario">Casi Primavera</h1>
+      <h1 class="text-2xl font-titulo text-primario">
+        <a href="index.html" class="hover:text-[#ccc5b9]">Casi Primavera</a>
+      </h1>
 
       <nav id="menu" class="hidden md:flex gap-8">
         <a href="index.html" class="hover:text-[#ccc5b9]">Home</a>
@@ -56,7 +59,7 @@
   <!-- MAIN -->
   <main id="contacto" class="flex-grow container mx-auto py-section px-6" v-cloak>
     <h2 class="text-4xl font-titulo mb-8 text-center">Contacto</h2>
-    <p class="text-center text-secundario max-w-2xl mx-auto mb-12">
+    <p class="text-center font-cuerpo max-w-3xl mx-auto mb-12">
       Si querés participar del ciclo, enviar tu cortometraje o simplemente ponerte en contacto con nosotros, completá el siguiente formulario.
     </p>
 
