@@ -7,11 +7,14 @@
 
   <!-- Tipografías -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link href="./output.css" rel="stylesheet">
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind local compilado -->
+  <link href="./css/output.css" rel="stylesheet">
 
+  
   <!-- VueJS CDN (para futuras secciones) -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 
@@ -22,9 +25,11 @@
 <body class="bg-black text-white flex flex-col min-h-screen font-cuerpo">
 
   <!-- HEADER -->
-  <header class="bg-black border-b border-borde">
+  <header class="bg-claro border-b border-borde">
     <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-white font-titulo text-primario">Casi Primavera</h1>
+      <h1 class="text-2xl font-titulo text-primario">
+        <a href="index.html" class="hover:text-[#ccc5b9]">Casi Primavera</a>
+      </h1>
 
       <nav id="menu" class="hidden md:flex gap-8">
         <a href="index.html" class="hover:text-[#ccc5b9]">Home</a>
@@ -42,7 +47,7 @@
     <!-- Menú mobile -->
     <nav id="mobile-menu" class="hidden flex-col bg-claro border-t border-borde md:hidden text-center">
       <a href="index.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Home</a>
-      <a href="galeria.html" class="py-4 text-lg font-medium hover:bg-white hover:text-blackblock">Galería</a>
+      <a href="galeria.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Galería</a>
       <a href="integrantes.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Integrantes</a>
       <a href="cine.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Cine</a>
       <a href="locaciones.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Locaciones</a>
@@ -52,35 +57,44 @@
   </header>
 
   <!-- MAIN -->
-  <main class="flex-grow container mx-auto py-section px-6 space-y-20">
+  <main class="relative flex flex-col items-center justify-center flex-grow py-20 px-6 text-center overflow-hidden">
+
+    <!-- Imagen de fondo -->
+  <div class="absolute inset-0 bg-cover bg-center opacity-50 brightness-50 z-0" style="background-image: url('img/fondo.jpg');"></div>
+
+
+  <!-- Capa oscura adicional -->
+  <div class="absolute inset-0 bg-black/50 z-0"></div>
+
+  <!-- Contenido -->
+  <div class="relative z-10 space-y-20 container mx-auto">
 
     <!-- Sección de bienvenida -->
     <section class="text-center">
-      <h2 class="text-4xl font-titulo mb-4">Bienvenidos a Casi Primavera</h2>
-      <p class="max-w-3xl mx-auto text-secundario leading-relaxed">
-        Un ciclo de cortometrajes independientes que celebra la experimentación, la poesía visual 
-        y las miradas diversas del cine argentino contemporáneo.
-      </p>
+      <h2 class="text-4xl md:text-5xl font-titulo mb-4 text-white">Bienvenides a Casi Primavera</h2>
+      <p class="max-w-3xl mx-auto font-cuerpo leading-relaxed text-white/90">
+         Un ciclo de cortometrajes independientes que celebra la experimentación, la poesía visual 
+         y las miradas diversas del cine argentino contemporáneo.
+       </p>
     </section>
 
     <!-- Subsección 1 -->
     <section class="grid md:grid-cols-2 gap-12">
-      <div class="bg-claro p-8 rounded-2xl shadow-sm border border-borde hover:shadow-md transition">
-        <h3 class="text-2xl font-titulo text-primario mb-3">Ediciones anteriores</h3>
-        <p class="text-secundario mb-4">
-          Una selección de fotos de los útimos eventos.
-        </p>
-        <a href="galeria.html" class="text-acento font-medium hover:underline">Ver galería</a>
+      <div class="bg-black/60 backdrop-blur-md p-8 rounded-2xl border border-borde transform transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl hover:shadow-black/40">
+      <h3 class="text-2xl font-titulo text-primario mb-3">Ediciones anteriores</h3>
+      <p class="font-cuerpo mb-4">Una selección de fotos de los últimos eventos.</p>
+      <a href="galeria.html" class="text-acento font-medium hover:text-[#ccc5b9]">Ver galería</a>
       </div>
 
+
       <!-- Subsección 2 -->
-      <div class="bg-claro p-8 rounded-2xl shadow-sm border border-borde hover:shadow-md transition">
+       <div class="bg-black/60 backdrop-blur-md p-8 rounded-2xl border border-borde transform transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl hover:shadow-black/40">
         <h3 class="text-2xl font-titulo text-primario mb-3">Próxima Convocatoria</h3>
-        <p class="text-secundario mb-4">
+        <p class="font-cuerpo mb-4">
           Si sos realizador o realizadora y querés ser parte de Casi Primavera, conocé las bases 
           para la próxima convocatoria y enviá tu cortometraje.
         </p>
-        <a href="contacto.html" class="text-acento font-medium hover:underline">Participar</a>
+        <a href="contacto.html" class="text-acento font-medium hover:text-[#ccc5b9]">Participar</a>
       </div>
     </section>
   </main>

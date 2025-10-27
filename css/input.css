@@ -12,4 +12,12 @@ a {
   box-shadow: 0 2px 8px rgba(99, 83, 83, 0.05);
 }
 
+.font-titulo {
+  font-family: 'League Gothic', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase; /* opcional si querés reforzar el estilo */
+}
+
+
 @import "tailwindcss";
