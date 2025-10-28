@@ -24,68 +24,88 @@
 
 <body class="bg-black text-white flex flex-col min-h-screen font-cuerpo">
 
-  <!-- HEADER -->
-  <header class="bg-claro border-b border-borde mb-4">
+  <!--HEADER-->
+  <header class="bg-claro border-b border-borde z-50">
     <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-titulo text-primario">
-        <a href="index.html" class="hover:text-[#ccc5b9]">Casi Primavera</a>
-      </h1>
+      <h1 class="text-5xl font-titulo text-primario">
+        <a href="index.html" class="hover:text-[#ccc5b9]">Casi Primavera</a></h1>
 
-      <nav id="menu" class="hidden md:flex gap-8">
+        <nav id="menu" class="hidden md:flex gap-8 relative text-2xl">
         <a href="index.html" class="hover:text-[#ccc5b9]">Home</a>
         <a href="galeria.html" class="hover:text-[#ccc5b9]">Galería</a>
-        <a href="integrantes.html" class="hover:text-[#ccc5b9]">Integrantes</a>
+        <!-- RECURSOS con dropdown -->
+        <div class="relative group">
+        <a href="recursos.html" class="hover:text-[#ccc5b9] flex items-center gap-1">
+          Recursos</a>
+        <div id="dropdown-recursos"  class="absolute hidden flex-col bg-claro rounded-md shadow-lg top-full mt-4 left-0 min-w-[180px] z-50 pt-4 top-[80px]"  >
+        <a href="recursos.html#distribuidoras" class="text-xl font-cuerpo mt-4 mb-2 p-2 hover:text-[#ccc5b9]">Distribuidoras</a>
+        <a href="recursos.html#salas" class="text-xl font-cuerpo p-2 hover:text-[#ccc5b9]">Salas amigas</a>
+        </div>
+        </div>
         <a href="cine.html" class="hover:text-[#ccc5b9]">Cine</a>
-        <a href="locaciones.html" class="hover:text-[#ccc5b9]">Locaciones</a>
+        <a href="comunidad.html" class="hover:text-[#ccc5b9]">Comunidad</a>
         <a href="contacto.html" class="hover:text-[#ccc5b9]">Contacto</a>
-        <a href="acerca.html" class="hover:text-[#ccc5b9]">Acerca de</a>
-      </nav>
-
-      <button id="menu-btn" class="md:hidden text-primario focus:outline-none text-2xl">☰</button>
+        <a href="acercade.html" class="hover:text-[#ccc5b9]">Acerca de</a>
+      </nav>  
+      <button id="menu-btn" class="md:hidden text-primario focus:outline-none text-2xl">☰</button>  
     </div>
 
-    <!-- Menú mobile -->
-    <nav id="mobile-menu" class="hidden flex-col bg-claro border-t border-borde md:hidden text-center">
-      <a href="index.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Home</a>
-      <a href="galeria.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Galería</a>
-      <a href="integrantes.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Integrantes</a>
-      <a href="cine.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Cine</a>
-      <a href="locaciones.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Locaciones</a>
-      <a href="contacto.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Contacto</a>
-      <a href="acerca.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Acerca de</a>
-    </nav>
+<!-- Menú mobile -->
+  <nav id="mobile-menu"
+    class="hidden flex-col bg-claro border-t border-borde md:hidden text-center transition-all duration-300">
+    <a href="index.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Home</a>
+    <a href="galeria.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Galería</a>
+
+    <!-- Dropdown Recursos (mobile) -->
+    <div id="mobile-recursos">
+      <button id="mobile-recursos-btn"
+        class="w-full py-4 text-lg font-medium hover:bg-white hover:text-black block">
+        Recursos</button>
+        <div id="mobile-recursos-dropdown" class="hidden flex-col bg-claro">
+        <a href="recursos.html#distribuidoras" class="py-3 text-base hover:bg-white hover:text-black block">Distribuidoras</a>
+        <a href="recursos.html#salas" class="py-3 text-base hover:bg-white hover:text-black block">Salas amigas</a>
+      </div>
+    </div>
+    <a href="cine.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Cine</a>
+    <a href="locaciones.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Locaciones</a>
+    <a href="contacto.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Contacto</a>
+    <a href="acercade.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Acerca de</a>
+  </nav>
+  </header>
+
   </header>
 
   <!-- MAIN -->
-  <main id="contacto" class="flex-grow container mx-auto py-section px-6" v-cloak>
-    <h2 class="text-4xl font-titulo mb-8 text-center">Contacto</h2>
-    <p class="text-center font-cuerpo max-w-3xl mx-auto mb-12">
-      Si querés participar del ciclo, enviar tu cortometraje o simplemente ponerte en contacto con nosotros, completá el siguiente formulario.
+  <main id="contacto" class="flex-grow container mx-auto py-section px-6 mb-4">
+    <h2 class="text-5xl font-titulo mb-8 mt-16  text-center">Contacto</h2>
+    <p class="font-cuerpo text-2xl text-center leading-relaxed text-white/90 mb-16 max-w-4xl mx-auto">
+      Si querés participar del ciclo, enviar tu cortometraje o simplemente <br> ponerte en contacto con nosotros, completá el siguiente formulario.
     </p>
 
     <!-- FORMULARIO -->
-    <form @submit.prevent="enviarFormulario" class="max-w-xl mx-auto bg-claro p-8 rounded-2xl shadow-sm border border-borde space-y-6">
+    <form @submit.prevent="enviarFormulario" class="max-w-2xl mx-auto bg-claro p-8 rounded-2xl shadow-sm border border-borde space-y-12">
   <div>
-    <label for="nombre" class="block text-sm font-medium text-primario mb-2">Nombre</label>
-    <input v-model="nombre" id="nombre" type="text" required class="w-full border border-borde rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-acento">
+    <label for="nombre" class="block text font-cuerpo text-2xl mb-2">Nombre</label>
+    <input v-model="nombre" id="nombre" type="text" required class="w-full border border-borde rounded-lg px-6 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-acento">
   </div>
 
   <div>
-    <label for="email" class="block text-sm font-medium text-primario mb-2">Correo electrónico</label>
-    <input v-model="email" id="email" type="email" required class="w-full border border-borde rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-acento">
+    <label for="email" class="block text font-cuerpo text-2xl mb-2">Correo electrónico</label>
+    <input v-model="email" id="email" type="email" required class="w-full border border-borde rounded-lg px-6 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-acento">
   </div>
 
   <div>
-    <label for="mensaje" class="block text-sm font-medium text-primario mb-2">Mensaje</label>
-    <textarea v-model="mensaje" id="mensaje" rows="5" required class="w-full border border-borde rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-acento"></textarea>
+    <label for="mensaje" class="block text font-cuerpo text-2xl mb-2">Mensaje</label>
+    <textarea v-model="mensaje" id="mensaje" rows="5" required class="w-full border border-borde rounded-lg px-6 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-acento"></textarea>
   </div>
 
   <!-- BOTÓN DE ENVIAR -->
-  <div class="text-center">
-    <button type="submit" class="bg-acento text-claro px-6 py-2 rounded-lg hover:bg-white hover:text-black transition font-medium">
-      Enviar
-    </button>
-  </div>
+  <div class="text-center font-cuerpo mt-6">
+  <button type="submit" class="bg-acento p-8 rounded-lg hover:bg-white hover:text-black transition font-cuerpo text-2xl">
+    Enviar
+  </button>
+</div>
+
 
   <p v-if="exito" class="text-green-600 text-center mt-4">¡Mensaje enviado con éxito!</p>
 </form>

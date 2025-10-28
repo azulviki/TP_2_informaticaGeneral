@@ -12,7 +12,8 @@ createApp({
         'img/cp6.JPG',
       ],
       indice: 0,
-      interval: null
+      interval: null,
+      hover: false,
     };
   },
   methods: {
@@ -27,11 +28,16 @@ createApp({
       if (diff > n/2) diff -= n;
       if (diff < -n/2) diff += n;
 
-      if (diff === 0) return 'translateX(0) scale(1)';
-      if (diff === 1) return 'translateX(160px) scale(1)';
-      if (diff === -1) return 'translateX(-160px) scale(1)';
-      if (diff === 2) return 'translateX(220px) scale(1)';
-      if (diff === -2) return 'translateX(-220px) scale(1)';
+      // Escala más grande si está en el centro y el mouse encima
+      if (diff === 0) return this.hover
+        ? 'translateX(0) scale(1.1)'
+        : 'translateX(0) scale(1)';
+
+      if (diff === 0) return 'translateX(0) scale(0.9)';
+      if (diff === 1) return 'translateX(160px) scale(0.9)';
+      if (diff === -1) return 'translateX(-160px) scale(0.9)';
+      if (diff === 2) return 'translateX(120px) scale(0.9)';
+      if (diff === -2) return 'translateX(-120px) scale(0.9)';
       return 'translateX(0) scale(0)';
     },
     getZIndex(i) { return 10 - Math.abs(i - this.indice) }
@@ -49,11 +55,11 @@ createApp({
 
       <!-- Slides -->
       <div v-for="(f, i) in fotos" :key="i"
-           class="absolute top-1/2 w-128 h-96 rounded-xl shadow-2xl transition-all duration-700 hover:scale-105"
+           class="absolute top-1/2 w-128 h-96 rounded-xl shadow-2xl transition-all duration- hover:scale-105"
            :style="{
              transform: getTransform(i) + ' translateY(-50%)',
              zIndex: getZIndex(i),
-             opacity: getZIndex(i) > 0 ? 1 : 0
+             opacity: getZIndex(i) > 0 ? 1 : 0.6
            }">
         <img :src="f" class="w-full h-full object-cover rounded-xl"/>
       </div>

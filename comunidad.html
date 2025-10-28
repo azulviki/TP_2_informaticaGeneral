@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Casi Primavera — Comunidad</title>
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="./output.css" rel="stylesheet">
+
+  <!-- Tailwind local compilado -->
+  <link href="./css/output.css" rel="stylesheet">
+
+  
+  <!-- VueJS CDN (para futuras secciones) -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="bg-black text-white flex flex-col min-h-screen font-cuerpo">
+
+  <!--HEADER-->
+  <header class="bg-claro border-b border-borde z-50">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-5xl font-titulo text-primario">
+        <a href="index.html" class="hover:text-[#ccc5b9]">Casi Primavera</a></h1>
+
+        <nav id="menu" class="hidden md:flex gap-8 relative text-2xl">
+        <a href="index.html" class="hover:text-[#ccc5b9]">Home</a>
+        <a href="galeria.html" class="hover:text-[#ccc5b9]">Galería</a>
+        <!-- RECURSOS con dropdown -->
+        <div class="relative group">
+        <a href="recursos.html" class="hover:text-[#ccc5b9] flex items-center gap-1">
+          Recursos</a>
+        <div id="dropdown-recursos"  class="absolute hidden flex-col bg-claro rounded-md shadow-lg top-full mt-4 left-0 min-w-[180px] z-50 pt-4 top-[80px]"  >
+        <a href="recursos.html#distribuidoras" class="text-xl font-cuerpo mt-4 mb-2 p-2 hover:text-[#ccc5b9]">Distribuidoras</a>
+        <a href="recursos.html#salas" class="text-xl font-cuerpo p-2 hover:text-[#ccc5b9]">Salas amigas</a>
+        </div>
+        </div>
+        <a href="cine.html" class="hover:text-[#ccc5b9]">Cine</a>
+        <a href="comunidad.html" class="hover:text-[#ccc5b9]">Comunidad</a>
+        <a href="contacto.html" class="hover:text-[#ccc5b9]">Contacto</a>
+        <a href="acercade.html" class="hover:text-[#ccc5b9]">Acerca de</a>
+      </nav>  
+      <button id="menu-btn" class="md:hidden text-primario focus:outline-none text-2xl">☰</button>  
+    </div>
+
+<!-- Menú mobile -->
+  <nav id="mobile-menu"
+    class="hidden flex-col bg-claro border-t border-borde md:hidden text-center transition-all duration-300">
+    <a href="index.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Home</a>
+    <a href="galeria.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Galería</a>
+
+    <!-- Dropdown Recursos (mobile) -->
+    <div id="mobile-recursos">
+      <button id="mobile-recursos-btn"
+        class="w-full py-4 text-lg font-medium hover:bg-white hover:text-black block">
+        Recursos</button>
+        <div id="mobile-recursos-dropdown" class="hidden flex-col bg-claro">
+        <a href="recursos.html#distribuidoras" class="py-3 text-base hover:bg-white hover:text-black block">Distribuidoras</a>
+        <a href="recursos.html#salas" class="py-3 text-base hover:bg-white hover:text-black block">Salas amigas</a>
+      </div>
+    </div>
+    <a href="cine.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Cine</a>
+    <a href="locaciones.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Locaciones</a>
+    <a href="contacto.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Contacto</a>
+    <a href="acercade.html" class="py-4 text-lg font-medium hover:bg-white hover:text-black block">Acerca de</a>
+  </nav>
+  </header>
+
+  <!-- MAIN -->
+  
+    <main class="relative flex flex-col items-center mt-8 justify-start flex-grow py-50 px-6 text-center overflow-hidden">
+      
+
+    <!-- Imagen de fondo -->
+  <div class="absolute inset-0 bg-cover bg-center opacity-50 brightness-50 z-0" 
+       style="background-image: url('img/fondoLoc.jpg');"></div>
+
+  <!-- Capa oscura adicional -->
+  <div class="absolute inset-0 bg-black/50 z-0"></div>
+
+  <!-- Contenido -->
+  <div class="relative z-10 space-y-12 container mx-auto">
+
+    <!-- Sección de bienvenida -->
+    <section class="text-center mt-16  mb-3">
+    <h2 class="text-5xl font-titulo mb-2 text-center">Comunidad</h2>
+      <p class="font-cuerpo text-2xl leading-relaxed text-white/90 max-w-5xl mx-auto">
+        Casi Primavera busca y encuentra siempre el lugar correcto. <br>Explora los límites  que aparece la locación soñada. Se expande. <br> Eso sí, siempre por fuera de la General Paz.
+       </p>
+    </section>
+     
+  </div>
+    
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-claro border-t border-borde py-6 mt-16">
+    <div class="text-center text-secundario text-sm">
+      &copy; 2025 Casi Primavera — Ciclo de cortometrajes. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/menu.js"></script>
+</body>
+</html>
