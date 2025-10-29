@@ -25,7 +25,7 @@
 <body class="bg-black text-white flex flex-col min-h-screen font-cuerpo">
 
   <!--HEADER-->
-  <header class="bg-claro border-b border-borde z-50">
+  <header class="bg-black border-b border-borde z-50">
     <div class="container mx-auto flex justify-between items-center p-4">
       <h1 class="text-5xl font-titulo text-primario">
         <a href="index.html" class="hover:text-[#ccc5b9]">Casi Primavera</a></h1>
@@ -34,12 +34,12 @@
         <a href="index.html" class="hover:text-[#ccc5b9]">Home</a>
         <a href="galeria.html" class="hover:text-[#ccc5b9]">Galería</a>
         <!-- RECURSOS con dropdown -->
-        <div class="relative group">
+         <div class="relative group">
         <a href="recursos.html" class="hover:text-[#ccc5b9] flex items-center gap-1">
           Recursos</a>
-        <div id="dropdown-recursos"  class="absolute hidden flex-col bg-claro rounded-md shadow-lg top-full mt-4 left-0 min-w-[180px] z-50 pt-4 top-[80px]"  >
-        <a href="rentals.html" class="text-xl font-cuerpo mt-4 mb-2 p-2 hover:text-[#ccc5b9]">Rentals</a>
-        <a href="salas.html" class="text-xl font-cuerpo p-2 hover:text-[#ccc5b9]">Salas amigas</a>
+        <div id="dropdown-recursos"  class="absolute hidden group-hover:flex flex-col iten-start bg-claro rounded-md shadow-lg top-full mt-4 left-0 min-w-[180px] z-50">
+        <a href="rentals.html" class="block w-full text-2xl font-cuerpo py-2 px-4 mt-4 hover:text-[#ccc5b9]">Rentals</a>
+        <a href="salas.html" class="block w-full text-2xl font-cuerpo py-2 px-4  hover:text-[#ccc5b9]">Salas amigas</a>
         </div>
         </div>
         <a href="cine.html" class="hover:text-[#ccc5b9]">Cine</a>
@@ -74,29 +74,29 @@
   </header>
 
   <!-- MAIN -->
-  <main class="relative flex flex-col items-center justify-center flex-grow py-20 px-6 text-center overflow-hidden">
+  <main class="relative flex flex-col items-center  flex-grow text-center overflow-hidden">
 
     <!-- Imagen de fondo -->
   <div class="absolute inset-0 bg-cover bg-center opacity-50 brightness-50 z-0" style="background-image: url('img/fondo.jpg');"></div>
 
 
   <!-- Capa oscura adicional -->
-  <div class="absolute inset-0 bg-black/50 z-0"></div>
+  <div class="absolute inset-0 bg-black/60 z-0"></div>
 
   <!-- Contenido -->
-  <div class="relative z-10 space-y-20 container mx-auto">
+  <div class="relative z-20 container mx-auto py-8 px-6">
 
     <!-- Sección de bienvenida -->
-    <section class="text-center py-16 md:py-20 mb-3">
-      <h2 class="text-6xl md:text-7xl font-titulo mb-5 text-white">Bienvenides a Casi Primavera</h2>
-      <p class="font-cuerpo text-2xl md:text-2xl leading-relaxed text-white/90 max-w-5xl mx-auto">
-         Un ciclo de cortometrajes independientes que celebra la experimentación, la poesía visual <br>
+    <section class="text-center pt-24">
+      <h2 class="text-6xl md:text-7xl font-titulo mt-16 mb-8 pb-48 text-white">Bienvenides</h2>
+      <p class="font-cuerpo text-2xl leading-relaxed pb-24 text-white/90 max-w-5xl mx-auto">
+         Casi Primavera es un ciclo de cortometrajes independientes que celebra la experimentación, la poesía visual 
          y las miradas diversas del cine argentino contemporáneo.</p>
     </section>
      
 
     <!-- Subsección 1 -->
-    <section class="grid md:grid-cols-2 gap-12 mb-16 mt3">
+    <section class="grid md:grid-cols-2 gap-12 mt-16 mb-8">
       <div class="bg-black/60 backdrop-blur-md p-8 rounded-2xl border border-borde transform transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl hover:shadow-black/40">
       <h3 class="text-4xl font-titulo mb-4">Ediciones anteriores</h3>
       <p class="font-cuerpo text-lg md:text-2xl leading-relaxed mb-16 text-white/90">Una selección de fotos de los últimos eventos.</p>
@@ -112,10 +112,11 @@
         <a href="contacto.html" class="font-cuerpo text-2xl hover:text-[#ccc5b9] transition-colors">Participar</a>
       </div>
     </section>
+  </div>
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-claro border-t border-borde py-6 mt-16">
+  <footer class="bg-black border-t border-borde py-6">
     <div class="text-center text-secundario text-sm">
       &copy; 2025 Casi Primavera — Ciclo de cortometrajes. Todos los derechos reservados.
     </div>
