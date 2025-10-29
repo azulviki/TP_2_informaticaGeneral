@@ -49,7 +49,7 @@
       </nav>  
       <button id="menu-btn" class="md:hidden text-primario focus:outline-none text-2xl">☰</button>  
     </div>
-    
+
 <!-- Menú mobile -->
   <nav id="mobile-menu"
     class="hidden flex-col bg-claro border-t border-borde md:hidden text-center transition-all duration-300">
@@ -75,10 +75,10 @@
 
   <!-- MAIN -->
   
-  <main class="relative flex flex-col items-center mt-8 justify-start flex-grow py-50 px-6 text-center overflow-hidden">
+  <main class="relative flex flex-col items-center mt-8 justify-start flex-grow min-h-[calc(100vh-50px)] py-50 px-6 text-center overflow-hidden">
       <!-- Imagen de fondo -->
       <div class="absolute inset-0 bg-cover bg-center opacity-50 brightness-50 z-0" 
-       style="background-image: url('img/fondoInte.jpg');"></div>
+       style="background-image: url('img/fondoFoto.jpg');"></div>
 
       <!-- Capa oscura adicional -->
      <div class="absolute inset-0 bg-black/50 z-0"></div>
@@ -88,11 +88,53 @@
 
       <!-- Sección de bienvenida -->
        <section class="text-center mt-3  mb-3">
-      <h2 class="text-5xl font-titulo mt-16 mb-2 text-center">Rentals</h2>
-      <p class="font-cuerpo text-2xl leading-relaxed text-white/90 max-w-5xl mx-auto">
+       <h2 class="text-5xl font-titulo mt-16 mb-2 text-center">Rentals</h2>
+       <p class="font-cuerpo text-2xl leading-relaxed text-white/90 max-w-5xl mx-auto">
         En esta sección te dejamos un listado de rentals para que no te quedes sin grabar.
        </p>
       </section>
+
+
+      
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+           
+             
+          
+        </thead>
+        <tbody>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Apple MacBook Pro 17"
+                
+                <td class="px-6 py-4 text-right">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                </td>
+            </tr>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Microsoft Surface Pro
+                </th>
+                
+                <td class="px-6 py-4 text-right">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Magic Mouse 2
+                </th>
+                
+                <td class="px-6 py-4 text-right">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
   </main>
 
   <!-- FOOTER -->
@@ -104,5 +146,6 @@
 
   <!-- JS -->
   <script src="js/menu.js"></script>
+  <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
 </body>
 </html>

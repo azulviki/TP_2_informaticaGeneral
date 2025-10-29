@@ -1,17 +1,23 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./*.html"], // incluye todos tus HTML
+
+module.exports = {
+  content: ["./*.html",
+    "./src/**/*.{html,js}",
+    "./node_modules/flowbite/**/*.js"],
+
+
   theme: {
     extend: {
       colors: {
-        primario: '#000000ff',     
-        secundario: '#f0f3efff',   
-        acento: '#474c4dff',       
-        borde: '#ffffffff',          
-        claro: '#634646ff',          
+        primario: '#000000ff',
+        secundario: '#f0f3efff',
+        acento: '#474c4dff',
+        borde: '#ffffffff',
+        claro: '#634646ff',
       },
+      
       spacing: {
-        section: '6rem',         // tu clase py-section
+        section: '6rem',
       },
 
       fontFamily: {
@@ -24,15 +30,10 @@ export default {
         subtitulo: ['2rem', { lineHeight: '1.3' }],
         cuerpo: ['3rem', { lineHeight: '1.6' }],
       },
-
-
     },
-  },
-  plugins: [],
-};
 
-module.exports = {
-  content: ["./*.html", "./js/**/*.js"],
+  },
+
   safelist: [
     "h-[500px]",
     "hover:scale-105",
@@ -40,4 +41,7 @@ module.exports = {
     "scale-90",
     "scale-80",
   ],
-}
+  plugins: [
+    require('flowbite/plugin')
+  ],
+};
