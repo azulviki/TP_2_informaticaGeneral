@@ -76,27 +76,27 @@
   </header>
 
   <!-- MAIN -->
-  <main id="contacto" class="relative flex flex-col items-center  justify-start flex-grow py-50 px-6 text-center overflow-hidden">
+  <main id="contacto" class="relative flex flex-col   justify-start flex-grow px-8 text-center overflow-hidden">
     <h2 class="text-5xl font-titulo mb-8 mt-16  text-center">Contacto</h2>
-    <p class="font-cuerpo text-2xl text-center leading-relaxed text-white/90 mb-16 max-w-4xl mx-auto">
+    <p class="font-cuerpo text-2xl text-center leading-relaxed text-white/90 mb-16 max-w-xl mx-auto">
       Si querés participar del ciclo, enviar tu cortometraje o simplemente <br> ponerte en contacto con nosotros, completá el siguiente formulario.
     </p>
 
     <!-- FORMULARIO -->
-    <form @submit.prevent="enviarFormulario" class="max-w-2xl mx-auto bg-claro p-8 rounded-2xl shadow-sm border border-borde space-y-12">
+    <form @submit.prevent="enviarFormulario" class="w-full max-w-2xl mx-auto bg-claro p-4 rounded-2xl shadow-sm border border-borde space-y-12">
   <div>
     <label for="nombre" class="block text font-cuerpo text-2xl mb-2">Nombre</label>
-    <input v-model="nombre" id="nombre" type="text" required class="w-full border border-borde rounded-lg px-6 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-acento">
+    <input v-model="nombre" id="nombre" type="text" required class="w-full border border-borde rounded-lg px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-acento">
   </div>
 
   <div>
     <label for="email" class="block text font-cuerpo text-2xl mb-2">Correo electrónico</label>
-    <input v-model="email" id="email" type="email" required class="w-full border border-borde rounded-lg px-6 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-acento">
+    <input v-model="email" id="email" type="email" required class="w-full border border-borde rounded-lg px-3 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-acento">
   </div>
 
   <div>
     <label for="mensaje" class="block text font-cuerpo text-2xl mb-2">Mensaje</label>
-    <textarea v-model="mensaje" id="mensaje" rows="5" required class="w-full border border-borde rounded-lg px-6 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-acento"></textarea>
+    <textarea v-model="mensaje" id="mensaje" rows="5" required class="w-full border border-borde rounded-lg px-8 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-acento"></textarea>
   </div>
 
   <!-- BOTÓN DE ENVIAR -->
@@ -113,7 +113,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-claro border-t border-borde py-6">
+  <footer class="bg-claro border-t border-borde py-6 mt-0 mt-16">
     <div class="text-center text-secundario text-sm">
       &copy; 2025 Casi Primavera — Ciclo de cortometrajes. Todos los derechos reservados.
     </div>
