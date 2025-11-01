@@ -43,6 +43,7 @@ module.exports = {
     "scale-90",
     "scale-80",
   ],
+  
   plugins: [
     require('flowbite/plugin')
   ],
