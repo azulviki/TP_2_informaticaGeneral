@@ -77,13 +77,21 @@
 
   <!-- MAIN -->
   <main id="contacto" class="relative flex flex-col items-center  justify-start flex-grow pt-18 text-center overflow-hidden">
+      <!-- Imagen de fondo -->
+      <div class="absolute inset-0 bg-cover bg-center opacity-50 brightness-50 z-0" 
+       style="background-image: url('img/cp36.jpg');"></div>
+
+      <!-- Capa oscura adicional -->
+     <div class="absolute inset-0 bg-black/50 z-0"></div>
+     <!-- Contenido -->
+      <div class="relative z-10 space-y-12 container mx-auto">
     <h2 class="text-5xl font-titulo mb-8 mt-16  text-center">Contacto</h2>
     <p class="font-cuerpo text-2xl text-center leading-relaxed text-white/90 mb-16 max-w-3xl mx-auto">
       Si querés participar del ciclo, enviar tu cortometraje o simplemente ponerte en contacto con nosotros, completá el siguiente formulario.
     </p>
 
     <!-- FORMULARIO -->
-    <form @submit.prevent="enviarFormulario" class="w-full max-w-2xl mx-auto bg-claro p-4 rounded-2xl shadow-sm border border-borde space-y-12">
+    <form @submit.prevent="enviarFormulario" class="w-full max-w-2xl mx-auto bg-black p-8 rounded-2xl shadow-sm border border-borde space-y-12 z-50">
   <div>
     <label for="nombre" class="block text font-cuerpo text-2xl mb-2">Nombre</label>
     <input v-model="nombre" id="nombre" type="text" required class="w-full border border-borde rounded-lg px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-acento">
@@ -109,11 +117,11 @@
 
   <p v-if="exito" class="text-green-600 text-center mt-4">¡Mensaje enviado con éxito!</p>
 </form>
-
+      </div>
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-claro border-t border-borde py-6 mt-0 mt-16">
+  <footer class="bg-claro border-t border-borde py-6 ">
     <div class="text-center text-secundario text-sm">
       &copy; 2025 Casi Primavera — Ciclo de cortometrajes. Todos los derechos reservados.
     </div>
