@@ -73,7 +73,6 @@
   </nav>
   </header>
 
-  </header>
 
   <!-- MAIN -->
   <main id="contacto" class="relative flex flex-col items-center  justify-start flex-grow pt-18 text-center overflow-hidden">
@@ -90,35 +89,41 @@
       Si querés participar del ciclo, enviar tu cortometraje o simplemente ponerte en contacto con nosotros, completá el siguiente formulario.
     </p>
 
+   
+
     <!-- FORMULARIO -->
     <form @submit.prevent="enviarFormulario" class="w-full max-w-2xl mx-auto mb-16 bg-black p-8 rounded-2xl shadow-sm border border-borde space-y-12 z-50">
-  <div>
+    <div>
     <label for="nombre" class="block text font-cuerpo text-2xl mb-2">Nombre</label>
     <input v-model="nombre" id="nombre" type="text" required class="w-full border border-borde rounded-lg px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-acento">
-  </div>
+    </div>
 
-  <div>
+    <div>
     <label for="email" class="block text font-cuerpo text-2xl mb-2">Correo electrónico</label>
     <input v-model="email" id="email" type="email" required class="w-full border border-borde rounded-lg px-3 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-acento">
-  </div>
+    </div>
 
-  <div>
+    <div>
     <label for="mensaje" class="block text font-cuerpo text-2xl mb-2">Mensaje</label>
     <textarea v-model="mensaje" id="mensaje" rows="5" required class="w-full border border-borde rounded-lg px-8 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-acento"></textarea>
-  </div>
+    </div>
 
   <!-- BOTÓN DE ENVIAR -->
-  <div class="text-center font-cuerpo mt-6">
-  <button type="submit" class="bg-acento p-6 rounded-xl hover:bg-white hover:text-black transition font-cuerpo text-2xl">
+    <div class="text-center font-cuerpo mt-6">
+    <button type="submit" class="bg-acento p-6 rounded-xl hover:bg-white hover:text-black transition font-cuerpo text-2xl">
     Enviar
-  </button>
-</div>
+    </button>
+    </div>
 
 
-  <p v-if="exito" class="text-green-600 text-center mt-4">¡Mensaje enviado con éxito!</p>
-</form>
-      </div>
-  </main>
+      <p v-if="exito" class="text-green-600 text-center mt-4">¡Mensaje enviado con éxito!</p>
+
+   </form>
+  </div>
+
+  </section>
+
+</main>
 
   <!-- FOOTER -->
   <footer class="bg-claro border-t border-borde py-6 ">
